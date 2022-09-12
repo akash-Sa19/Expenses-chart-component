@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/logo.e3925cba.png">
+
+  <!-- Adding jquery -->
+  <!-- <script src="./node_modules/jquery/dist/jquery.js" type="module"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+  <title>Expenses chart component | Frontend Mentor</title>
+
+  <link rel="stylesheet" href="./assets/index.5b33f488.css">
+</head>
+
+<body class="bg-cream flex bg-full justify-center items-center font-DMSans w-screen h-screen">
+  <!-- Full Card -->
+  <div class="flex flex-col justify-center items-center w-11/12 desktop:w-1/3 tablet:w-2/3 tablet:max-w-[500px] max-w-[400px]">
+    <!-- Card Top Part -->
+    <div class="w-full bg-softRed rounded-md">
+      <div class=" text-white m-4  flex justify-between">
+        <div>
+          <h1 class="opacity-50 desktop:text-lg">My balance</h1>
+          <p class="font-bold text-2xl desktop:text-3xl">$921.48</p>
+        </div>
+        <div class="flex justify-center items-center">
+          <svg width="72" height="48" viewBox="0 0 72 48" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" fill-rule="evenodd">
+              <circle fill="#382314" cx="48" cy="24" r="24" />
+              <circle stroke="#FFF" stroke-width="2" cx="24" cy="24" r="23" />
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <!-- Card Middle Part -->
+    <div class="bg-white w-full rounded-md mt-4">
+
+
+      <h1 class="font-bold text-2xl ml-5 mt-5 ">Spending - Last 7 days</h1>
+      <div class="flex w-full h-54  justify-center ">
+        <!-- chart -->
+        <div class="w-8 desktop:w-14 tablet:w-12 h-52 mx-1.5">
+          <div class="h-2/3 w-full "></div>
+          <div class="h-1/3 w-full bg-softRed rounded-sm hover:bg-cyan" id="mon"></div>
+        </div>
+        <div class="w-8 desktop:w-14 tablet:w-12 h-52  mx-1.5">
+          <div class="h-2/5 w-full "></div>
+          <div class="h-3/5 w-full bg-softRed rounded-sm hover:bg-cyan" id="tue"></div>
+        </div>
+        <div class="w-8 desktop:w-14 tablet:w-12 h-52  mx-1.5">
+          <div class="h-1/6 w-full "></div>
+          <div class="h-5/6 w-full bg-softRed rounded-sm hover:bg-cyan " id="wed"></div>
+        </div>
+        <div class="w-8 desktop:w-14 tablet:w-12 h-52  mx-1.5">
+          <div class="h-3/5 w-full"></div>
+          <div class="h-2/5 w-full bg-softRed rounded-sm hover:bg-cyan" id="thu"></div>
+        </div>
+        <div class="w-8 desktop:w-14 tablet:w-12 h-52 mx-1.5">
+          <div class="h-3/4 w-full"></div>
+          <div class="h-1/4 w-full bg-softRed rounded-sm hover:bg-cyan" id="fri"></div>
+        </div>
+        <div class="w-8 desktop:w-14 tablet:w-12 rounded-sm h-52 mx-1.5">
+          <div class="h-1/3 w-full"></div>
+          <div class="h-2/3 rounded-sm w-full bg-softRed hover:bg-cyan" id="sat"></div>
+        </div>
+        <div class="w-8 desktop:w-14 tablet:w-12 h-52 mx-1.5">
+          <div class="h-1/2 w-full"></div>
+          <div class="h-1/2 w-full rounded-sm bg-softRed hover:bg-cyan" id="sun"></div>
+        </div>
+      </div>
+      <div class="flex justify-center my-3">
+        <p class="w-8 desktop:w-14 tablet:w-12 mx-1.5 text-sm desktop:text-base opacity-50 font-semibold flex justify-center">
+          <span>mon</span> </p>
+        <p class="w-8 desktop:w-14 tablet:w-12 mx-1.5 text-sm desktop:text-base opacity-50 font-semibold flex justify-center">
+          <span>tue</span> </p>
+        <p class="w-8 desktop:w-14 tablet:w-12 mx-1.5 text-sm desktop:text-base opacity-50 font-semibold flex justify-center">
+          <span>wed</span> </p>
+        <p class="w-8 desktop:w-14 tablet:w-12 mx-1.5 text-sm desktop:text-base opacity-50 font-semibold flex justify-center">
+          <span>thu</span> </p>
+        <p class="w-8 desktop:w-14 tablet:w-12 mx-1.5 text-sm desktop:text-base opacity-50 font-semibold flex justify-center">
+          <span>fri</span> </p>
+        <p class="w-8 desktop:w-14 tablet:w-12 mx-1.5 text-sm desktop:text-base opacity-50 font-semibold flex justify-center">
+          <span>sat</span> </p>
+        <p class="w-8 desktop:w-14 tablet:w-12 mx-1.5 text-sm desktop:text-base opacity-50 font-semibold flex justify-center">
+          <span>sun</span> </p>
+      </div>
+      <!-- Horizontal Bar -->
+      <div class="w-11/12 h-1 bg-cream m-auto"></div>
+      <!-- Card Bottom Part -->
+      <div class="flex flex-col w-full my-4 ">
+        <p class="opacity-50 font-semibold mx-4 desktop:text-lg">Total this month</p>
+
+        <div class="flex justify-between w-full items-end">
+          <h1 class=" font-bold text-3xl mx-4 desktop:text-4xl">$478.33</h1>
+          <div class="flex flex-col items-end mx-4">
+            <p class="font-bold leading-3">+2.4%</p>
+            <p class="opacity-50 font-semibold desktop:text-lg">from last month</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  
+  <script>
+    date = new Date();
+    day = date.getDay();
+    $(document).ready(function () {
+
+      switch (day) {
+        case 0:
+          $("sun").removeClass("bg-softRed");
+          $("sun").addClass("bg-cyan");
+          console.log("Sunday");
+          break;
+
+        case 1:
+          $("#mon").removeClass("bg-softRed");
+          $("#mon").addClass("bg-cyan");
+          console.log("Monday");
+          break;
+
+        case 2:
+          $("#tue").removeClass("bg-softRed");
+          $("#tue").addClass("bg-cyan");
+          console.log("Tuesday");
+          break;
+
+        case 3:
+          $("#wed").removeClass("bg-softRed");
+          $("#wed").addClass("bg-cyan");
+          console.log("Wednesday");
+          break;
+
+        case 4:
+          $("#thu").removeClass("bg-softRed");
+          $("#thu").addClass("bg-cyan");
+          console.log("Thusday");
+          break;
+
+        case 5:
+          $("#fri").removeClass("bg-softRed");
+          $("#fri").addClass("bg-cyan");
+          console.log("Friday");
+          break;
+
+        case 6:
+          $("#sat").removeClass("bg-softRed");
+          $("#sat").addClass("bg-cyan");
+          console.log("Saturday");
+          break;
+      }
+
+    });
+  </script>
+</body>
+
+</html>
